@@ -9,18 +9,20 @@ import {FilmService} from '../film.service'
 export class FilmListComponent implements OnInit {
 
   filmList : Object[] = []
-  filmName : string; 
+  filmName : string;
   constructor(private filmCardService: FilmService) { }
 
   ngOnInit() {
-    this.filmName = "Lord"
+    this.filmName = "Brothers"
     this.getFilms();
   }
 
   private getFilms(){
     if(!this.filmName) {return;}
     this.filmCardService.getFilms(this.filmName).subscribe(data => {
-      this.filmList = data;
+      if (data) {
+        this.filmList = data;
+      }
     })
   }
 }
