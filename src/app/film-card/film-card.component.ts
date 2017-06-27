@@ -13,7 +13,9 @@ export class FilmCardComponent implements OnInit {
   constructor(private filmCardService: FilmService) { }
 
   ngOnInit() {
-    if(!this.filmId) {return;}
+    if(!this.filmId) {
+      return;
+    }
     this.filmCardService.getFilmById(this.filmId).subscribe(data => {
       this.filmItem = data;
     })
