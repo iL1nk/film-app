@@ -9,16 +9,25 @@ import {FilmService} from '../film.service'
 export class FilmCardComponent implements OnInit {
   @Input()
   filmId: string; 
-  filmItem: {} = {};
+  @Input()
+  viewType: number;
+  filmItem: any[] = [];
   constructor(private filmCardService: FilmService) { }
 
   ngOnInit() {
-    if(!this.filmId) {
-      return;
+    if(this.filmId) {
+      this.filmCardService.getFilmById(this.filmId)
+        .subscribe(
+          (filmItem: any[]) => {
+            if (filmItem) {
+              this.filmItem = filmItem;
+            }
+          },
+          (error: any) => {
+            console.log(error);
+          }
+        );
     }
-    this.filmCardService.getFilmById(this.filmId).subscribe(data => {
-      this.filmItem = data;
-    })
   }
 
 }

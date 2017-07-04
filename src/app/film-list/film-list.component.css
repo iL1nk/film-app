@@ -2,3 +2,9 @@
    margin: 50px auto; 
    max-width: 884px;
 }
+
+button.btnAdd {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}

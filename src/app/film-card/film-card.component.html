@@ -1,6 +1,22 @@
-<md-card class="film-card">
-	<img md-card-image src="{{filmItem.Poster}}">
-	<md-card-content>
+<md-card class="film-card-view-vertical" *ngIf="viewType === 1">
+	<img class="img-view-vertical" md-card-image src="{{filmItem.Poster}}">
+	<md-card-content class="film-content-view-vertical">
+		<md-card-title>{{filmItem.Title}}</md-card-title>
+		<p><strong>Released:</strong> {{filmItem.Released}}</p>
+		<p><strong>Director:</strong> {{filmItem.Director}}</p>
+		<p><strong>Starring:</strong> {{filmItem.Actors}}</p>
+		<p><strong>Country:</strong> {{filmItem.Country}}</p>
+		<p>{{filmItem.Plot}}</p>
+		<p><strong>Ratings:</strong> {{filmItem.Ratings && filmItem.Ratings.length && filmItem.Ratings[0].Value}}</p>
+	</md-card-content>
+	<md-card-actions>
+		<button md-button>Learn More...</button>
+	</md-card-actions>
+</md-card>
+
+<md-card class="film-card-view-horizontal" *ngIf="viewType === 2">
+	<img class="img-view-horizontal" md-card-image src="{{filmItem.Poster}}">
+	<md-card-content class="film-content-view-horizontal">
 		<md-card-title>{{filmItem.Title}}</md-card-title>
 		<p><strong>Released:</strong> {{filmItem.Released}}</p>
 		<p><strong>Director:</strong> {{filmItem.Director}}</p>

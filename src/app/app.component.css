@@ -26,8 +26,8 @@ md-sidenav {
 }
 
 .app-content {
-   margin: 50px auto; 
-   max-width: 830px;
+  margin: 50px auto;
+  max-width: 1290px;
 }
 .dashboard-card {
   max-width: 300px;
