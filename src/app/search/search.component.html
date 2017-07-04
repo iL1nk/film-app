@@ -1,0 +1,9 @@
+<form action="" class="example-form">
+	<md-input-container class="example-full-width">
+		<input mdInput placeholder="Search for a movie" name="filmName" [(ngModel)]="filmName" (keyup.enter) = "getFilms()">
+	</md-input-container>
+    <md-select class="mat-select" placeholder="View" [(ngModel)]="view" name="view" (change)="changeView(view)">
+        <md-option [value]="1">Vertical</md-option>
+        <md-option [value]="2">Horizontal</md-option>
+    </md-select>
+</form>

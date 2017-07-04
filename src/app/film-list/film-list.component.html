@@ -1,9 +1,3 @@
-<form action="" class="example-form">
-	<md-input-container class="example-full-width">
-		<input mdInput placeholder="Search for a movie" name="filmName" [(ngModel)]="filmName" (keyup.enter) = "getFilms()">
-	</md-input-container>
-</form>
-
 <md-grid-list cols="2" rowHeight="850px">
 		
   <md-grid-tile *ngFor="let film of filmList">
