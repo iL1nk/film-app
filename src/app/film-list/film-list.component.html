@@ -1,6 +1,8 @@
 <app-search (getFilms)="getNewFilms($event)"></app-search>
 <view-type (selectView)="selectView($event)"></view-type>
 
+<md-card *ngIf="isFilmListEmpty()">Sorry, there is no such movies in the directory...</md-card>
+
 <md-grid-list cols="2" [rowHeight]="rowHeightRequired">
   <md-grid-tile *ngFor="let film of filmList">
 		<film-card [filmId]="film.imdbID" [viewType]="viewRequired"></film-card>

@@ -40,6 +40,10 @@ export class FilmListComponent implements OnInit {
     }
   }
 
+  isFilmListEmpty(): boolean {
+    return this.filmList && !this.filmList.length;
+  }
+
   getNewFilms(filmName: string): void {
     this.filmName = filmName;
     this.pageNumber = "1";
